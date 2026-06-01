@@ -49,8 +49,14 @@
 #       - name: Show Date
 #         run: date
 
+#       - name: Show Indian Time
+#         run: TZ='Asia/Kolkata' date
+
 #       - name: Display current directory
 #         run: pwd
+
+
+
 
 name: GitHub pull request workflow
 
