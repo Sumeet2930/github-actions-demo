@@ -1,20 +1,46 @@
-name: GitHub Actions CI
+# name: GitHub Actions CI
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v4
+
+#       - name: Display Message
+#         run: echo "GitHub Actions CI Workflow Executed Successfully"
+
+#       - name: Show Date
+#         run: date
+
+name: GitHub Workflow CI
 
 on:
   push:
     branches:
       - main
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+      jobs:
+        demo-job:
+          runs-on: ubuntu-latest 
+          #this code line means that the job will run on the latest version of Ubuntu available in GitHub Actions.
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+          steps:
+            - name: Checkout Code
+            uses: actions/checkout@v4
+            #this step uses the checkout action to clone the repository's code into the runner environment, allowing subsequent steps to access the codebase.
 
-      - name: Display Message
-        run: echo "GitHub Actions CI Workflow Executed Successfully"
+            - name: Display Message
+              run: echo "Sumeet written this code and GitHub Actions CI Workflow Executes Successfully"
 
-      - name: Show Date
-        run: date
+            - name: Show Date
+              run: date
+
+            - name: Display current directory
+              run: pwd
