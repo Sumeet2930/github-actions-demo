@@ -19,27 +19,58 @@
 #       - name: Show Date
 #         run: date
 
-name: GitHub Workflow CI
+
+
+
+
+
+
+
+# name: GitHub Workflow CI
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   demo-job:
+#     runs-on: ubuntu-latest 
+#     #this code line means that the job will run on the latest version of Ubuntu available in GitHub Actions.
+
+#     steps:
+#       - name: Checkout Code
+#         uses: actions/checkout@v4
+#         #this step uses the checkout action to clone the repository's code into the runner environment, allowing subsequent steps to access the codebase.
+
+#       - name: Display Message
+#         run: echo "Sumeet written this code and GitHub Actions CI Workflow Executes Successfully"
+
+#       - name: Show Date
+#         run: date
+
+#       - name: Display current directory
+#         run: pwd
+
+name: GitHub pull request workflow
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
 jobs:
-  demo-job:
-    runs-on: ubuntu-latest 
-    #this code line means that the job will run on the latest version of Ubuntu available in GitHub Actions.
+  demo-jobs:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v4
-        #this step uses the checkout action to clone the repository's code into the runner environment, allowing subsequent steps to access the codebase.
 
-      - name: Display Message
-        run: echo "Sumeet written this code and GitHub Actions CI Workflow Executes Successfully"
+      - name: Display message
+        run: echo "This is a pull request workflow triggered by a pull request to the main branch."
 
-      - name: Show Date
+      - name: Show date
         run: date
 
       - name: Display current directory
